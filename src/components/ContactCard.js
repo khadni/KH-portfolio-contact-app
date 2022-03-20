@@ -5,7 +5,7 @@ import { UserCircleIcon } from "@heroicons/react/solid";
 const ContactCard = (props) => {
   const { name, email, id } = props.contact;
   return (
-    <tr className="border-b-2 border-dotted">
+    <tr className="border-b-2 border-dotted hover:bg-gray-100">
       <td className="py-2 flex flex-row items-center">
         <UserCircleIcon className="h-8 w-8 ml-2 mr-4 fill-gray-600" />
         {name}

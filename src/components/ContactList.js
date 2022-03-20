@@ -14,7 +14,7 @@ const ContactList = (props) => {
     },
   ];
   //-- RENDER CONTACTS LIST---
-  const renderContactList = contacts.map((contact) => {
+  const renderContactList = props.contacts.map((contact) => {
     return (
       <ContactCard
         contact={contact}
@@ -29,7 +29,7 @@ const ContactList = (props) => {
   return (
     <div className="mx-auto mt-12 w-full px-10 sm:px-16 md:px-24 lg:px-42 xl:px-60 2xl:px-96">
       <div className="text-2xl py-6 border-b-2 mb-6 font-semibold">
-        Contact List
+        My Contacts
       </div>
       <table className="table-auto w-full text-center shadow-md rounded-lg">
         <thead className="border-b-2 bg-gray-50">

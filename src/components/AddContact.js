@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddContact = (props) => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
+  let navigate = useNavigate();
 
   const addNewContact = (e) => {
     e.preventDefault();
@@ -12,13 +14,14 @@ const AddContact = (props) => {
       return;
     }
     props.addContactHandler(newName, newEmail);
+    navigate("/");
   };
 
   return (
-    <div className="mx-auto w-full px-10 sm:px-32 md:px-48 lg:px-64 xl:px-80 2xl:px-96">
-      <div className="text-2xl py-6 border-b-2 mb-6 font-semibold">
+    <div className="mt-14 mx-auto w-full px-10 sm:px-32 md:px-48 lg:px-64 xl:px-80 2xl:px-96">
+      {/* <div className="mt-6 text-2xl py-6 border-b-2 mb-6 font-semibold">
         Add a contact
-      </div>
+      </div> */}
       <form className="flex flex-col" onSubmit={addNewContact}>
         <label className="flex flex-col py-4">
           <div className="mb-2 text-lg">Contact name:</div>

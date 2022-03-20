@@ -59,8 +59,19 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            <Route path="add" element={<AddContact />} />
-            <Route path="/" element={<ContactList />} />
+            <Route
+              path="add"
+              element={<AddContact addContactHandler={addContactHandler} />}
+            />
+            <Route
+              path="/"
+              element={
+                <ContactList
+                  contacts={contacts}
+                  getContactId={deleteContactHandler}
+                />
+              }
+            />
             {/* <AddContact addContactHandler={addContactHandler} />
           <ContactList
             contacts={contacts}
