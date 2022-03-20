@@ -27,6 +27,14 @@ function App() {
     ]);
   };
 
+  const deleteContactHandler = (id) => {
+    const newContactList = contacts.filter((contact) => {
+      return contact.id !== id;
+    });
+
+    setContacts(newContactList);
+  };
+
   useEffect(() => {
     const retrieveContacts = JSON.parse(
       localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -43,7 +51,7 @@ function App() {
       <div className="container flex flex-col justify-center mx-auto py-12">
         <Header />
         <AddContact addContactHandler={addContactHandler} />
-        <ContactList contacts={contacts} />
+        <ContactList contacts={contacts} getContactId={deleteContactHandler} />
       </div>
     </div>
   );

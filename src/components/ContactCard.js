@@ -3,7 +3,7 @@ import { TrashIcon } from "@heroicons/react/solid";
 import { UserCircleIcon } from "@heroicons/react/solid";
 
 const ContactCard = (props) => {
-  const { name, email } = props.contact;
+  const { name, email, id } = props.contact;
   return (
     <tr className="border-b-2 border-dotted">
       <td className="py-2 flex flex-row items-center">
@@ -12,7 +12,9 @@ const ContactCard = (props) => {
       </td>
       <td>{email}</td>
       <td>
-        <TrashIcon className="fill-red-500 h-6 w-6" />
+        <div onClick={() => props.handleClick(id)}>
+          <TrashIcon className="fill-red-500 h-6 w-6 hover:cursor-pointer" />
+        </div>
       </td>
     </tr>
   );
