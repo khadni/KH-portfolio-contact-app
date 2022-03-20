@@ -3,7 +3,7 @@ import { TrashIcon } from "@heroicons/react/solid";
 import { UserCircleIcon } from "@heroicons/react/solid";
 
 const ContactCard = (props) => {
-  const { id, name, email } = props.contact;
+  const { name, email } = props.contact;
   return (
     <tr className="border-b-2 border-dotted">
       <td className="py-2 flex flex-row items-center">
