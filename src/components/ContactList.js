@@ -6,8 +6,15 @@ const ContactList = (props) => {
     props.getContactId(id);
   };
 
+  const contacts = [
+    {
+      id: "1",
+      name: "Georges",
+      email: "george.p@gmail.com",
+    },
+  ];
   //-- RENDER CONTACTS LIST---
-  const renderContactList = props.contacts.map((contact) => {
+  const renderContactList = contacts.map((contact) => {
     return (
       <ContactCard
         contact={contact}

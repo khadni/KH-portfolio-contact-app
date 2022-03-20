@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 import uniqid from "uniqid";
 import { useState, useEffect } from "react";
 import "./App.css";
@@ -49,9 +56,18 @@ function App() {
   return (
     <div className="font-poppins">
       <div className="container flex flex-col justify-center mx-auto py-12">
-        <Header />
-        <AddContact addContactHandler={addContactHandler} />
-        <ContactList contacts={contacts} getContactId={deleteContactHandler} />
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="add" element={<AddContact />} />
+            <Route path="/" element={<ContactList />} />
+            {/* <AddContact addContactHandler={addContactHandler} />
+          <ContactList
+            contacts={contacts}
+            getContactId={deleteContactHandler}
+          /> */}
+          </Routes>
+        </Router>
       </div>
     </div>
   );
