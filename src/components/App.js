@@ -12,7 +12,7 @@ function App() {
   const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([
     {
-      id: 1,
+      id: "p98ger21",
       name: "Karim Hadni",
       email: "karim.hadni@gmail.com",
       notes: "Somes notes about Karim... trying to be a front-end dev ASAP!",
