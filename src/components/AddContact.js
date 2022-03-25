@@ -5,15 +5,16 @@ import { useNavigate } from "react-router-dom";
 const AddContact = (props) => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
+  const [newNotes, setNewNotes] = useState("");
   let navigate = useNavigate();
 
   const addNewContact = (e) => {
     e.preventDefault();
-    if (newName === "" && newEmail === "") {
+    if (newName === "" || newEmail === "" || newNotes === "") {
       alert("All the fields are mandatory.");
       return;
     }
-    props.addContactHandler(newName, newEmail);
+    props.addContactHandler(newName, newEmail, newNotes);
     navigate("/");
   };
 
@@ -29,7 +30,7 @@ const AddContact = (props) => {
             type="text"
             name="name"
             placeholder="Name..."
-            className="py-3 px-2 placeholder:italic border border-slate-300 rounded-md shadow-md focus:outline-none focus:ring-sky-500 focus:ring-2"
+            className="py-3 px-2 placeholder:italic border border-slate-300 rounded-md shadow-md focus:outline-none focus:ring-purple-700 focus:ring-2"
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
             required
@@ -41,13 +42,25 @@ const AddContact = (props) => {
             type="email"
             name="email"
             placeholder="E-mail..."
-            className="py-3 px-2 placeholder:italic border border-slate-300 rounded-md shadow-md focus:outline-none focus:ring-sky-500 focus:ring-2"
+            className="py-3 px-2 placeholder:italic border border-slate-300 rounded-md shadow-md focus:outline-none ring-purple-700 focus:ring-2"
             value={newEmail}
             onChange={(e) => setNewEmail(e.target.value)}
             required
           />
         </label>
-        <button className="mt-6 px-6 py-4 font-semibold bg-sky-600 w-36 text-white text-lg rounded-md self-center shadow-md hover:bg-sky-700">
+        <label className="flex flex-col py-4">
+          <div className="mb-2 text-lg">Notes about the contact:</div>
+          <textarea
+            name="notes"
+            rows="5"
+            placeholder="Some notes..."
+            className="py-3 px-2 placeholder:italic border border-slate-300 rounded-md shadow-md focus:outline-none ring-purple-700 focus:ring-2"
+            value={newNotes}
+            onChange={(e) => setNewNotes(e.target.value)}
+            required
+          />
+        </label>
+        <button className="btn inline-block mt-4 py-3 border-2 bg-purple-700 border-purple-700 text-white font-bold text-md leading-tight uppercase rounded hover:bg-purple-900 hover:border-purple-900 hover:text-white focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
           Add
         </button>
       </form>

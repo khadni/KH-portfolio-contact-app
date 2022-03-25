@@ -6,18 +6,11 @@ const ContactList = (props) => {
     props.getContactId(id);
   };
 
-  const contacts = [
-    {
-      id: "1",
-      name: "Georges",
-      email: "george.p@gmail.com",
-    },
-  ];
   //-- RENDER CONTACTS LIST---
   const renderContactList = props.contacts.map((contact) => {
     return (
       <ContactCard
-        contact={contact}
+        contacts={contact}
         key={contact.id}
         handleClick={deleteContactHandler}
       />
@@ -27,7 +20,7 @@ const ContactList = (props) => {
   //-- CONTACT LIST RETURN---
 
   return (
-    <div className="mx-auto mt-12 w-full px-10 sm:px-16 md:px-24 lg:px-42 xl:px-60 2xl:px-96">
+    <div className="mx-auto mt-12 w-full">
       <div className="text-2xl py-6 border-b-2 mb-6 font-semibold">
         My Contacts
       </div>

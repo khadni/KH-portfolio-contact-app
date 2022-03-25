@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="flex flex-col self-center">
-      <div className="text-4xl font-semibold py-6 self-center">Contact App</div>
+    <header className="w-full pt-0 flex flex-col self-center bg-purple-50">
+      <div className="text-3xl text-center my-10">Contact App by KH</div>
       <nav className="self-center">
         <Link
           to="/"
-          className="py-2 px-4 mr-6 border-2 border-black rounded-md shadow-md hover:bg-gray-100"
+          className="btn inline-block px-6 py-2 mx-3 mb-10 border-2 border-purple-700 text-purple-700 font-medium text-md leading-tight uppercase rounded hover:bg-purple-900 hover:border-purple-900 hover:text-white focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
         >
           My Contacts
         </Link>
         <Link
           to="/add"
-          className="py-2 px-4 border-2 bg-sky-600 border-sky-600 text-white rounded-md shadow-md hover:bg-sky-700"
+          className="btn inline-block px-6 py-2 mx-3 mb-10 border-2 border-purple-700 text-purple-700 font-medium text-md leading-tight uppercase rounded hover:bg-purple-900 hover:border-purple-900 hover:text-white focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
         >
           Add a contact
         </Link>

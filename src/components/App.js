@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import uniqid from "uniqid";
 import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
+import ContactDetails from "./ContactDetails";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -23,13 +18,14 @@ function App() {
     },
   ]);
 
-  const addContactHandler = (name, email) => {
+  const addContactHandler = (name, email, notes) => {
     setContacts([
       ...contacts,
       {
         id: uniqid(),
         name: name,
         email: email,
+        notes: notes,
       },
     ]);
   };
@@ -72,11 +68,7 @@ function App() {
                 />
               }
             />
-            {/* <AddContact addContactHandler={addContactHandler} />
-          <ContactList
-            contacts={contacts}
-            getContactId={deleteContactHandler}
-          /> */}
+            <Route path="/contact/:id" element={<ContactDetails />} />
           </Routes>
         </Router>
       </div>
