@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="font-poppins">
-      <div className="container flex flex-col justify-center mx-auto py-12">
+      <div className="container flex flex-col justify-center mx-auto pt-12 px-4">
         <Router>
           <Header />
           <Routes>
