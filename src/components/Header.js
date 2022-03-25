@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="w-full pt-0 flex flex-col self-center bg-purple-50">
+    <header className="w-full pt-0 flex flex-col self-center bg-purple-50 border-2 rounded-md">
       <div className="text-3xl text-center my-10">Contact App by KH</div>
       <nav className="self-center">
         <Link
