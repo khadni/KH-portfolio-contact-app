@@ -15,6 +15,7 @@ function App() {
       id: 1,
       name: "Karim Hadni",
       email: "karim.hadni@gmail.com",
+      notes: "Somes notes about Karim... trying to be a front-end dev ASAP!",
     },
   ]);
 
