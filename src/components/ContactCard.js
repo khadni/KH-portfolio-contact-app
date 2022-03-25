@@ -4,7 +4,7 @@ import { TrashIcon } from "@heroicons/react/solid";
 import { UserCircleIcon } from "@heroicons/react/solid";
 
 const ContactCard = (props) => {
-  const { id, name, email, notes } = props.contacts;
+  const { id, name, email } = props.contacts;
   const contactData = props.contacts;
   return (
     <tr className="border-b-2 border-dotted hover:bg-purple-50">
